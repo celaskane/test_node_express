@@ -1,8 +1,10 @@
 import express, { Request, Response, NextFunction } from "express";
+import { json } from "body-parser";
 import afazeresRoutes from './routes/afazeres';
 
 const app = express();
 
+app.use(json());
 app.use('/afazeres', afazeresRoutes);
 
 //middleware function (express.js)
